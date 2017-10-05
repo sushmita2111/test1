@@ -1,2 +1,35 @@
-# test1
-button program
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript</title>
+</head>
+<body>
+	<button onclick="myfunction(8,'red','btn')" id="btn">click me</button>
+	<button onclick="myfunction(9,'yellow','btn2')" id="btn2">ok</button><br>
+	<script type="text/javascript">
+	var inc = 1;
+		function myfunction(count,color,id){
+			//debugger;
+			console.log(inc);
+				x=inc%count;
+			    if(inc==count){
+			    	inc = 0;
+			    }
+			    if(x==0){
+				  document.getElementById(id).style.background=color;
+			    }
+			    else{
+				document.getElementById(id).style.background='lightgrey';
+			    }
+            ++inc;
+		}
+</script>
+
+
+
+
+
+
+   
+</body>
+</html>
