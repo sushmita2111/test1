@@ -7,16 +7,18 @@
     <input type="number" name='textfield' id='textf1' value="" oninput="store(this.value)"">
 	 <input type="number" name='textfield' id='textf2' style="margin-left: 100px" value="" ><br>
 	 
-    <select id='s1' style="width: 12.8%">
-    	<option id="kilometer" onclick="getopt()">kilometer</option>
-    	<option id="centiometer" onclick="getopt()">centimeter</option>
+
+	 <!-- used on change listner on select, used a uinque id in value for every option -->
+    <select id='s1' style="width: 12.8%"  onchange="getopt()">
+    	<option  value="kilometer">Kilometer</option>
+    	<option  value="centimeter">Centimeter</option>
     </select>
 
     <select id='s2' style="margin-left: 100px; width: 12.8%">
     	<option text='meter' onclick="getopt()">meter</option>
     </select>
     
-    <input type="text" id='showopt'>
+    <input type="text" id='showopt' placeholder="result">
 <script type="text/javascript">
 
 		var x,y;
@@ -26,8 +28,12 @@
 		}
 
         function getopt(){
-        	var obj = document.getElementById('s1');
-            document.getElementById('showopt').innerHTML=obj.options[obj.selectedIndex].text;
+        	var obj = document.getElementById('s1').value;
+        	console.log("value of  : "+ obj);
+
+        	//Instead of innerHtml use value, as its an input field, and we are just changing the value of that input field.
+
+            document.getElementById('showopt').value=obj;
            
         }      
 
