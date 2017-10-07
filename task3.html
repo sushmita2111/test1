@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task3</title>
+</head>
+<body>
+    <input type="number" name='textfield' id='textf1' value="" oninput="store(this.value)"">
+	 <input type="number" name='textfield' id='textf2' style="margin-left: 100px" value="" oninput="store1(this.value)"><br>
+	 
+	 <!-- used on change listner on select, used a uinque id in value for every option -->
+    <select id='s1' style="width: 12.8%"  onchange="getopt()">
+    	<option  value="selectunit">select unit</option>
+    	<option  value="kilometer">Kilometer</option>
+    	<option  value="centimeter">Centimeter</option>
+    	<option  value="milimeter">milimeter</option>
+    	<option  value="meter">meter</option>
+    </select>
+    <select id='s2' style="margin-left: 100px; width: 12.8%" onchange="getopt2()">
+    	<option  value="selectunit1">select unit</option>
+    	<option value="kilometer1">kilometer</option>
+    	<option  value="centimeter2">Centimeter</option>
+    	<option  value="milimeter3">milimeter</option>
+    	<option  value="meter4">meter</option>
+    </select>
+    
+    
+<script type="text/javascript">
+		var x,y,z,valnum1;
+		function store(valnum){
+			x=valnum;
+			valnum1=1;
+			console.log("value of x",x);
+			console.log("value of valnum1",valnum1);
+		}
+
+		function store1(valnum1){
+
+			x=valnum1;
+			valnum1=2;
+			
+			console.log("value of x",x);
+			console.log("value of valnum1",valnum1);
+		}
+        function getopt(){
+        	var obj = document.getElementById('s1').value;
+        	console.log("value of  : "+ obj);
+        	//Instead of innerHtml use value, as its an input field, and we are just changing the value of that input field.
+            y=obj;
+           console.log("value of y",y);
+           console.log("value of valnum1",valnum1);
+           convert();
+        }
+         function getopt2(){
+        	var obj1 = document.getElementById('s2').value;
+        	//console.log("value of  : "+ obj1);
+        	//Instead of innerHtml use value, as its an input field, and we are just changing the value of that input field.
+            z=obj1;
+           console.log("value of z",z);
+           console.log("value of valnum1",valnum1);
+           convert();
+        }
+         function showoutput(){
+         	if(valnum1==1){
+         		document.getElementById("textf2").value=y;
+         		console.log("value of valnum1",valnum1);
+         	}else{
+               document.getElementById("textf1").value=y;
+         	}
+         } 
+
+			function convert(){
+			if(y=='kilometer'&& z=='centimeter2'){
+			y=x*100000;
+			console.log("value of y",y);
+			console.log("value of valnum1",valnum1);
+			//document.getElementById("textf2").value=y;
+			showoutput();
+			}	
+			if(y=='centimeter'&& z=="kilometer1"){
+			y=x*100000;
+			console.log("value of y",y);
+			console.log("value of valnum1",valnum1);
+			//document.getElementById("textf2").value=y;
+			showoutput();
+			}
+			if(y=='kilometer'&& z=='milimeter3'){
+			y=x*1000000;
+			console.log("value of y",y);
+			showoutput();
+			}
+			if(y=='milimeter'&& z=='kilometer1'){
+			y=x*1000000;
+			console.log("value of y",y);
+			showoutput();
+			}
+			if(y=='kilometer'&& z=='meter4'){
+			y=x*1000;
+			console.log("value of y",y);
+			showoutput();
+			}
+			if(y=='meter'&& z=='kilometer1'){
+			y=x*1000;
+			console.log("value of y",y);
+			showoutput();
+			}
+		    if(y=='centimeter'&& z=='meter4'){
+			y=x*0.01;
+			console.log("value of y",y);
+			showoutput();
+			}
+			if(y=='meter'&& z=='centimeter2'){
+			y=x*0.01;
+			console.log("value of y",y);
+			showoutput();
+			}
+			if(y=='centimeter'&& z=="milimeter3"){
+			y=x*10;
+			console.log("value of y",y);
+			showoutput();
+			}
+            if(y=='milimeter'&& z=='centimeter2'){
+			y=x*10;
+			console.log("value of y",y);
+			showoutput();
+			}
+			if(y=='milimeter'&& z=='meter4'){
+			y=x*0.001;
+			console.log("value of y",y);
+			showoutput();
+			}
+			if(y=='meter'&& z=='milimeter3'){
+			y=x*0.001;
+			console.log("value of y",y);
+			showoutput();
+			}
+	}
+		
+	
+		
+</script>
+</body>
+</html>
